@@ -7,11 +7,12 @@ services:
     hostname: 'gitlab.ddragos.com'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.ddragos.com'
+        external_url 'http://gitlab.ddragos.com:8080'
+        gitlab_rails['gitlab_shell_ssh_port'] = 8022
     ports:
-      - '8080:80'
+      - '8080:8080'
       - '8443:443'
-      - '8022:22'
+      - '8022:8022'
     volumes:
       - '$GITLAB_HOME/config:/etc/gitlab'
       - '$GITLAB_HOME/logs:/var/log/gitlab'

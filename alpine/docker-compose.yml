@@ -1,0 +1,19 @@
+services:
+  runner:
+    build:
+      context: .
+      args:
+        SSH_USER: ${SSH_USER}
+        SSH_PASSWORD: ${SSH_PASSWORD}
+    ports:
+      - "2222:22"
+    networks:
+      runner:
+        ipv4_address: 172.20.0.10
+
+networks:
+  runner:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

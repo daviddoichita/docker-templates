@@ -10,6 +10,8 @@ services:
     networks:
       runner:
         ipv4_address: 172.20.0.10
+    extra_hosts:
+      - "gitlab.ddragos.com:192.168.0.238"
 
 networks:
   runner:

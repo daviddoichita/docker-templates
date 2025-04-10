@@ -1,4 +1,4 @@
-FROM node:20.18.3
+FROM node:23.11.0
 
 RUN apt-get update && apt-get install -y \
     fonts-liberation \
